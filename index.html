@@ -1,0 +1,185 @@
+<!-- This is the landing page of the website
+The hompage css and js files are attached to it 
+Every time the new user with the deleted local storage comes in this page
+will only rediredt to signup whether we click on Login button or signup button
+
+Once signed up, the page will then only allow us to login with the user name and 
+password stored in the local storage 
+
+The nav bar is will have the specifice tabs on each page
+
+This landing page functionality is to only divert the user to the shop page after
+successfull authentication. Hence its navbar only contains login and signup button
+
+The landing page also highlights one of the product fetched from dummy json website
+Each time we refresh the page we will se new product-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MeShop.</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Linking favicon -->
+    <!-- <link rel="shortcut icon" href="./images/shop_icon.png" type="image/png" /> -->
+
+    <!-- Linking the home-page stylesheet -->
+    <link rel="stylesheet" href="./CSS/home-page.css" />
+
+    <!-- Linking the navbar stylesheet -->
+    <link rel="stylesheet" href="./CSS/navbar.css" />
+
+    <!-- Linking the home-page script -->
+    <script src="./JS/home-page.js" defer></script>
+
+    <!-- Linking the navbar script -->
+    <script src="./JS/navbar.js" defer></script>
+  </head>
+  <body>
+    <!-- This image is used as the background for the  desc-wrapper class. Its position is fixed -->
+    <div class="imgDiv"></div>
+
+    <!-- The entire landing page is wrapped inside root div. It has two divs
+    The navbar div is for the navigation bar and the desc-wrapper div for the 
+    user interaction and the about section -->
+    <main class="root">
+      <!-- Navbar HTML -->
+      <nav class="navbar text-style">
+        <div id="logo-box">
+          <div class="material-symbols-outlined" id="menus">menu</div>
+          <div id="logo">MeShop.</div>
+        </div>
+        <div id="links">
+          <div id="login"><a>Login</a></div>
+          <div id="signup"><a href="./HTML/signup.html">SignUp</a></div>
+        </div>
+      </nav>
+
+      <!-- The desc wrapper is divided two parts
+      The left one contains the login adn signup button, logo nad the demo product 
+      fetched from dummy json server 
+      The right part only contains the about section which highlights the features of this website-->
+      <div class="desc-wrapper">
+        <div class="left">
+          <div>
+            <!-- The logo part -->
+            <h1 class="page-heading text-style">MeShop.</h1>
+
+            <!-- The buttons part -->
+            <div class="buttons">
+              <input type="button" value="Login" id="login-button" class="text-style"/>
+              <input type="button" value="Signup" id="signup-button" class="text-style"/>
+            </div>
+          </div>
+
+          <!-- Demo product area -->
+          <div class="demo-product text-style">
+            <div class="productPoster">
+              <div class="prodImage"></div>
+              <div class="prodTitle"></div>
+              <div class="prodPrice">
+                <div class="priceTag"></div>
+              </div>
+              <div class="prodRating"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About section area -->
+        <div class="right">
+          <div class="text-style">
+            <h1>About MeShop.</h1>
+            <p>
+              MeShop. is the dummy shopping website, which gives us the
+              realistic feel of the online shopping done on the various online
+              shopping platforms available in the market. It is not as
+              sophisticated and efficient as other online shopping platforms
+              are, but contains the required features such as product searching,
+              filtering, cart feature, user login, use signup, user
+              authentication and much more. It covers the complete cycle right
+              from the start of product search to the dummy payment completion.
+            </p>
+            <h1>Technologies used by MeShop.</h1>
+            <p>
+              MeShop. is entirely designed and developed in HTML, CSS and
+              Javascript. It do not implements any third party CSS or Javscript
+              frameworks like Tailwind or ReactJS. We are using the dummy
+              products, whose JSON file is fetched from the Fake Store API
+              website. This JSON file is then rendered as the dummy products in
+              the shop portal. As MeShop. is the dummy shopping platform, it is
+              required for it to have the dummy payment portal. This
+              functionality is adopted using the RazorPay API which allows us to
+              make the dummy payments. The deployment part of the website is
+              handled by the Github Pages and the code is deployed in the Github
+              Repository.
+            </p>
+            <p>
+              The backbone of any shopping platform is its storage, as it is
+              required to store the user details for authentication purpose,
+              product details and many more. This part of backend is taken care
+              by the browsers local storage. The local storage of the browser is
+              used to store the user details such as email and password, current
+              user details, product data that is fetched from the server and the
+              cart details of the products that are added by the user.
+            </p>
+
+            <h1 style="padding-left: 0px">MeShop. features</h1>
+            <ul style="padding-left: inherit">
+              <li>
+                Same user can signup and login with multiple emails and
+                password. Every credentials will be stored in the local storage
+                from which the authentication will be done. Signup and Login
+                level authentications such as the user with two same email id
+                cannot signup, email and password check while login and other
+                basic authetications are also provided. If in any case, the user
+                deletes the local storage data, the website will automatically
+                redirect the user to the landing page on refreshing.
+              </li>
+              <li>
+                The shopping portal has the features such as searching the
+                product, filtering and categorizing the products based on given
+                filter and category tags.The shopping portal can only be
+                accessed if the user is logged in, else the user will be
+                redirected to the landing page.
+              </li>
+              <li>
+                Every product in portal has Add to Cart button, where the user
+                can add products in multiple quantity and remove it from the
+                cart as well. In the shopping portal, the cart button will only
+                visible on the navbar if the user added atleast single product
+                to the cart.
+              </li>
+              <li>
+                User can always change their user details by clicking on the
+                profile section of the navbar which is only visible if the user
+                logs in. This profile section will display the name of the
+                current user logged in.
+              </li>
+              <li>
+                The cart page is specifically designed for the preview of the
+                products that are added to the cart. Local storage acts as the
+                exchange point between shopping portal and the cart page.
+                Whenever the user adds or remove the product in shopping portal,
+                this information is stored in local storage and then the
+                information stored is access by the cart page to render the
+                data.
+              </li>
+              <li>
+                We can initiate the dummy payment procedure using the RazorPay
+                API in test mode from the cart page only.
+              </li>
+              <li>
+                From design point of view, the website is fully responsive and
+                can be displayed smmothly on all the form factors that are given
+                in the browsers developer console.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
